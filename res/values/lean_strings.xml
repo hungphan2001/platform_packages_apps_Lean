@@ -138,6 +138,8 @@
     <string name="heads_up_snooze_10min">10 minutes</string>
     <string name="heads_up_snooze_15min">15 minutes</string>
     <string name="heads_up_snooze_20min">20 minutes</string>
-
+	<!-- Advanced Controls -->
+	<string name="advanced_controls_title">Advanced Controls</string>
+ 	
 </resources>
 
