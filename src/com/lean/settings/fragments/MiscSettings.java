@@ -23,10 +23,16 @@ import java.util.HashSet;
  import com.android.settings.SettingsPreferenceFragment;
  public class MiscSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
+  private static final String KEY_DEVICE_PART = "advanced_controls";
+    private static final String KEY_DEVICE_PART_PACKAGE_NAME = "com.thht.settings.device";
      @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
          addPreferencesFromResource(R.xml.lean_settings_misc);
+     // Advanced Controls
+        if (!com.lean.settings.preferences.Utils.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
+        }
      }
      @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
